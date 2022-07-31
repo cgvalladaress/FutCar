@@ -19,5 +19,16 @@ public class PorteriaTwo extends Actor
     public void act()
     {
         // Add your action code here.
+        entraPelota();
+    }
+    private void entraPelota()
+    {
+        if (isTouching(Pelota.class))
+        {
+            World world;
+            world = getWorld();
+            GanadorUno contador = new GanadorUno();
+            world.addObject(contador,363,233);
+        }
     }
 }

@@ -37,6 +37,19 @@ public class CarPlayerTwo extends Actor
             posY -= 3;
             
         setLocation( posX, posY );
+        estaChocandoPelota();
+        estaChocandoCarroAzul();
     }
-    
+    private void estaChocandoPelota(){
+        if (isTouching(Pelota.class))
+        {
+            posX = -posX;
+        }
+    }
+    private void estaChocandoCarroAzul(){
+        if (isTouching(CarPlayerOne.class))
+        {
+            posX = -posX;
+        }
+    }
 }

@@ -37,6 +37,32 @@ public class CarPlayerOne extends Actor
             posY -= 3;
         
         setLocation(posX , posY);
+        
+        estaChocandoPelota();
+        estaChocandoCarroRojo();
     }
     
+    public void golpe()
+    {
+        Actor Pelota;
+        Pelota = getOneObjectAtOffset(0, 0, Pelota.class);
+        if (Pelota != null)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(Pelota);
+        }
+    }
+    private void estaChocandoPelota(){
+        if (isTouching(Pelota.class))
+        {
+            posX = -posX;
+        }
+    }
+    private void estaChocandoCarroRojo(){
+        if (isTouching(CarPlayerTwo.class))
+        {
+            posX = -posX;
+        }
+    }
 }

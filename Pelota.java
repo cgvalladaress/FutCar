@@ -35,6 +35,35 @@ public class Pelota extends Actor
         {
             yMoveVal = yMoveVal * -1;
         }
-        
+        estaChocandoCarroUno();
+        estaChocandoCarroDos();
+        entroPorteriaUno();
+        entroPorteriaDos();
+    }
+    private void estaChocandoCarroUno(){
+        if (isTouching(CarPlayerOne.class))
+        {
+            xMoveVal = -xMoveVal;
+        }
+    }
+    private void estaChocandoCarroDos(){
+        if (isTouching(CarPlayerTwo.class))
+        {
+            xMoveVal = -xMoveVal;
+        }
+    }
+    private void entroPorteriaUno(){
+        if (isTouching(porteria.class))
+        {
+            xMoveVal = xMoveVal * 0;
+            yMoveVal = yMoveVal * 0;
+        }
+    }
+    private void entroPorteriaDos(){
+        if (isTouching(PorteriaTwo.class))
+        {
+            xMoveVal = xMoveVal * 0;
+            yMoveVal = yMoveVal * 0;
+        }
     }
 }
