@@ -29,6 +29,7 @@ public class PorteriaTwo extends Actor
             world = getWorld();
             GanadorUno contador = new GanadorUno();
             world.addObject(contador,363,233);
+            Greenfoot.playSound("goool.mp3");
         }
     }
 }
